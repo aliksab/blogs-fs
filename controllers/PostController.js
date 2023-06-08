@@ -36,7 +36,7 @@ export const getOne = async (req, res) => {
             returnDocument: 'after',
         }, {
             new: true
-        }); 
+        }).populate('user'); 
 
         if (!updatedPost) {
             return res.status(404).json({
